@@ -47,7 +47,7 @@ export const lists: Lists = {
         isIndexed: 'unique',
       }),
 
-      password: password({ validation: { isRequired: true } }),
+      password: password({ validation: { isRequired: false } }),
 
       // we can use this field to see what Posts this User has authored
       //   more on that in the Post list below

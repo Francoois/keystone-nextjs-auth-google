@@ -17,13 +17,25 @@ import { withAuth, session } from './auth';
 export default withAuth(
   config({
     db: {
-      // we're using sqlite for the fastest startup experience
-      //   for more information on what database might be appropriate for you
-      //   see https://keystonejs.com/docs/guides/choosing-a-database#title
-      provider: 'sqlite',
+        provider: 'sqlite',
       url: 'file:./keystone.db',
     },
     lists,
     session,
+	// ui: {
+	// 	async isAccessAllowed(context) {
+	// 		// let pass = 0;
+	// 		console.log("\nSESSION: ", context.session );
+	// 		console.log("SESSION STRATEGY : ", context.sessionStrategy );
+	// 		console.log("SESSION STRATEGY GET : ", await context.sessionStrategy?.get({context}) );
+	// 		console.log("CONTEXT REQ URL : ", context.req?.url );
+
+	// 		// return context.session?.data?.role === "ADMIN";
+	// 		return false;
+	// 	},
+	// 	pageMiddleware({context, isValidSession}) {
+	// 		console.log("PAGE MIDDLEWARE");
+	// 	},
+	// }
   })
 );
